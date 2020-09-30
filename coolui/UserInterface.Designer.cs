@@ -41,10 +41,10 @@
             this.flowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelSearch = new System.Windows.Forms.Panel();
+            this.buttonSortAZ = new System.Windows.Forms.Button();
             this.buttonClearSearch = new System.Windows.Forms.Button();
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.buttonHideControl = new System.Windows.Forms.Button();
-            this.buttonSortAZ = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             this.MPCMS.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -239,6 +239,20 @@
             this.panelSearch.Size = new System.Drawing.Size(878, 31);
             this.panelSearch.TabIndex = 5;
             // 
+            // buttonSortAZ
+            // 
+            this.buttonSortAZ.FlatAppearance.BorderSize = 0;
+            this.buttonSortAZ.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSortAZ.ForeColor = System.Drawing.Color.White;
+            this.buttonSortAZ.Image = ((System.Drawing.Image)(resources.GetObject("buttonSortAZ.Image")));
+            this.buttonSortAZ.Location = new System.Drawing.Point(397, 3);
+            this.buttonSortAZ.Margin = new System.Windows.Forms.Padding(0);
+            this.buttonSortAZ.Name = "buttonSortAZ";
+            this.buttonSortAZ.Size = new System.Drawing.Size(25, 24);
+            this.buttonSortAZ.TabIndex = 1;
+            this.buttonSortAZ.UseVisualStyleBackColor = true;
+            this.buttonSortAZ.Click += new System.EventHandler(this.buttonSortAZ_Click);
+            // 
             // buttonClearSearch
             // 
             this.buttonClearSearch.FlatAppearance.BorderSize = 0;
@@ -261,6 +275,7 @@
             this.textBoxSearch.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.textBoxSearch.Location = new System.Drawing.Point(0, 0);
             this.textBoxSearch.Name = "textBoxSearch";
+            this.textBoxSearch.PlaceholderText = "Search";
             this.textBoxSearch.Size = new System.Drawing.Size(326, 27);
             this.textBoxSearch.TabIndex = 0;
             this.textBoxSearch.TextChanged += new System.EventHandler(this.textBoxSearch_TextChanged);
@@ -278,20 +293,6 @@
             this.buttonHideControl.TabIndex = 1;
             this.buttonHideControl.UseVisualStyleBackColor = true;
             this.buttonHideControl.Click += new System.EventHandler(this.buttonHideControl_Click);
-            // 
-            // buttonSortAZ
-            // 
-            this.buttonSortAZ.FlatAppearance.BorderSize = 0;
-            this.buttonSortAZ.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSortAZ.ForeColor = System.Drawing.Color.White;
-            this.buttonSortAZ.Image = ((System.Drawing.Image)(resources.GetObject("buttonSortAZ.Image")));
-            this.buttonSortAZ.Location = new System.Drawing.Point(397, 3);
-            this.buttonSortAZ.Margin = new System.Windows.Forms.Padding(0);
-            this.buttonSortAZ.Name = "buttonSortAZ";
-            this.buttonSortAZ.Size = new System.Drawing.Size(25, 24);
-            this.buttonSortAZ.TabIndex = 1;
-            this.buttonSortAZ.UseVisualStyleBackColor = true;
-            this.buttonSortAZ.Click += new System.EventHandler(this.buttonSortAZ_Click);
             // 
             // MPCMSForm
             // 

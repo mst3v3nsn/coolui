@@ -120,43 +120,7 @@ namespace coolui
 
         private void PopulateFlowControlList()
         {
-            ListItem[] listItems = new ListItem[Files.Count];
-            for (int i = 0; i < listItems.Length; i++)
-            {
-                listItems[i] = new ListItem();
-                if (Files[i].Extension == ".ps1")
-                {
-                    listItems[i].Icon = ConvertPathToBitMap(powershellexe);
-                }
-                else if (Files[i].Extension == ".exe")
-                {
-                    //listItems[i].Icon = Resources.exe_32px;
-                    listItems[i].Icon = ConvertPathToBitMap(String.Format(@"{0}\{1}", Files[i].DirectoryName, Files[i].Name));
-                }
-                else if (Files[i].Extension == ".lnk")
-                {
-                    FileAttributes attr = System.IO.File.GetAttributes(String.Format(@"{0}\{1}", Files[i].DirectoryName, Files[i].Name));
-                    if ((attr & FileAttributes.Directory) != FileAttributes.Directory)
-                    {
-                        IWshShell3 wsh = new WshShellClass();
-                        IWshShortcut shortcut = (IWshShortcut)wsh.CreateShortcut(String.Format(@"{0}\{1}", Files[i].DirectoryName, Files[i].Name));
-                        string target = shortcut.TargetPath;
-
-                        listItems[i].Icon = ConvertPathToBitMap(target);
-                    }
-                }
-                else
-                {
-                    listItems[i].Icon = GetIconBitMap(Files[i].Extension);
-                }
-
-                listItems[i].Extension = Files[i].Extension;
-                listItems[i].Access = Files[i].LastAccessTime.ToString();
-                listItems[i].AppName = Files[i].Name;
-                listItems[i].AppPath = Files[i].DirectoryName;
-
-                flowLayoutPanel.Controls.Add(listItems[i]);
-            }
+            BuildFlowLayoutList(Files);
             listSorted = false;
         }
 
@@ -217,54 +181,20 @@ namespace coolui
         private void SearchList(string query)
         {
             flowLayoutPanel.Controls.Clear();
-
             List<FileInfo> filesFound = new List<FileInfo>(Files.FindAll(x => x.Name.ToLower().Contains(query.ToLower())));
-
-            ListItem[] listItems = new ListItem[filesFound.Count];
-
-            for (int i = 0; i < listItems.Length; i++)
-            {
-                listItems[i] = new ListItem();
-                if (filesFound[i].Extension == ".ps1")
-                {
-                    listItems[i].Icon = ConvertPathToBitMap(powershellexe);
-                }
-                else if (filesFound[i].Extension == ".exe")
-                {
-                    //listItems[i].Icon = Resources.exe_32px;
-                    listItems[i].Icon = ConvertPathToBitMap(String.Format(@"{0}\{1}", filesFound[i].DirectoryName, filesFound[i].Name));
-                }
-                else if (filesFound[i].Extension == ".lnk")
-                {
-                    FileAttributes attr = System.IO.File.GetAttributes(String.Format(@"{0}\{1}", filesFound[i].DirectoryName, filesFound[i].Name));
-                    if ((attr & FileAttributes.Directory) != FileAttributes.Directory)
-                    {
-                        IWshShell3 wsh = new WshShellClass();
-                        IWshShortcut shortcut = (IWshShortcut)wsh.CreateShortcut(String.Format(@"{0}\{1}", filesFound[i].DirectoryName, filesFound[i].Name));
-                        string target = shortcut.TargetPath;
-
-                        listItems[i].Icon = ConvertPathToBitMap(target);
-                    }
-                }
-                else
-                {
-                    listItems[i].Icon = GetIconBitMap(filesFound[i].Extension);
-                }
-
-                listItems[i].Extension = filesFound[i].Extension;
-                listItems[i].Access = filesFound[i].LastAccessTime.ToString();
-                listItems[i].AppName = filesFound[i].Name;
-                listItems[i].AppPath = filesFound[i].DirectoryName;
-
-                flowLayoutPanel.Controls.Add(listItems[i]);
-            }
+            BuildFlowLayoutList(filesFound);
         }
 
         private void SortList()
         {
             flowLayoutPanel.Controls.Clear();
             List<FileInfo> filesFound = new List<FileInfo>(Files.OrderBy(x => x.Name));
+            BuildFlowLayoutList(filesFound);
+            listSorted = true;
+        }
 
+        private void BuildFlowLayoutList(List<FileInfo> filesFound)
+        {
             ListItem[] listItems = new ListItem[filesFound.Count];
 
             for (int i = 0; i < listItems.Length; i++)
@@ -303,7 +233,6 @@ namespace coolui
 
                 flowLayoutPanel.Controls.Add(listItems[i]);
             }
-            listSorted = true;
         }
 
         private void buttonApps_Click(object sender, EventArgs e)
@@ -395,6 +324,11 @@ namespace coolui
             if (string.IsNullOrEmpty(textBoxSearch.Text) == false)
             {
                 SearchList(this.textBoxSearch.Text);
+            }
+            else
+            {
+                flowLayoutPanel.Controls.Clear();
+                PopulateFlowControlList();
             }
         }
 

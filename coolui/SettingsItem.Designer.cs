@@ -88,6 +88,8 @@ namespace coolui
             // 
             // textBoxDocsPath
             // 
+            this.textBoxDocsPath.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.textBoxDocsPath.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.FileSystemDirectories;
             this.textBoxDocsPath.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             this.textBoxDocsPath.ForeColor = System.Drawing.Color.Turquoise;
             this.textBoxDocsPath.Location = new System.Drawing.Point(25, 28);
@@ -116,6 +118,8 @@ namespace coolui
             // 
             // textBoxToolsPath
             // 
+            this.textBoxToolsPath.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.textBoxToolsPath.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.FileSystemDirectories;
             this.textBoxToolsPath.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             this.textBoxToolsPath.ForeColor = System.Drawing.Color.Turquoise;
             this.textBoxToolsPath.Location = new System.Drawing.Point(25, 27);
@@ -144,6 +148,8 @@ namespace coolui
             // 
             // textBoxAppsPath
             // 
+            this.textBoxAppsPath.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.textBoxAppsPath.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.FileSystemDirectories;
             this.textBoxAppsPath.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             this.textBoxAppsPath.ForeColor = System.Drawing.Color.Turquoise;
             this.textBoxAppsPath.Location = new System.Drawing.Point(25, 29);
