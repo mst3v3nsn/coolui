@@ -179,7 +179,7 @@
             this.buttonMPCMS.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.buttonMPCMS.FlatAppearance.BorderSize = 0;
             this.buttonMPCMS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonMPCMS.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.buttonMPCMS.Font = new System.Drawing.Font("Gill Sans Ultra Bold", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.buttonMPCMS.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
             this.buttonMPCMS.Image = ((System.Drawing.Image)(resources.GetObject("buttonMPCMS.Image")));
             this.buttonMPCMS.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -187,7 +187,7 @@
             this.buttonMPCMS.Name = "buttonMPCMS";
             this.buttonMPCMS.Size = new System.Drawing.Size(152, 96);
             this.buttonMPCMS.TabIndex = 3;
-            this.buttonMPCMS.Text = "MPCMS";
+            this.buttonMPCMS.Text = "Central UI";
             this.buttonMPCMS.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buttonMPCMS.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.buttonMPCMS.UseVisualStyleBackColor = false;
