@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "coolui": {
+      "commandName": "Project",
+      "nativeDebugging": true
+    }
+  }
+}
