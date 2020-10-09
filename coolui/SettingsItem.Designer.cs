@@ -33,6 +33,9 @@ namespace coolui
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SettingsItem));
             this.panelSettings = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.textBoxVMsPath = new System.Windows.Forms.TextBox();
+            this.labelVMsPath = new System.Windows.Forms.Label();
             this.buttonSave = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.textBoxDocsPath = new System.Windows.Forms.TextBox();
@@ -44,6 +47,7 @@ namespace coolui
             this.textBoxAppsPath = new System.Windows.Forms.TextBox();
             this.labelAppPath = new System.Windows.Forms.Label();
             this.panelSettings.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -52,6 +56,7 @@ namespace coolui
             // panelSettings
             // 
             this.panelSettings.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelSettings.Controls.Add(this.panel4);
             this.panelSettings.Controls.Add(this.buttonSave);
             this.panelSettings.Controls.Add(this.panel3);
             this.panelSettings.Controls.Add(this.panel2);
@@ -61,6 +66,36 @@ namespace coolui
             this.panelSettings.Name = "panelSettings";
             this.panelSettings.Size = new System.Drawing.Size(500, 402);
             this.panelSettings.TabIndex = 1;
+            // 
+            // panel4
+            // 
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.textBoxVMsPath);
+            this.panel4.Controls.Add(this.labelVMsPath);
+            this.panel4.Location = new System.Drawing.Point(12, 152);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(460, 67);
+            this.panel4.TabIndex = 1;
+            // 
+            // textBoxVMsPath
+            // 
+            this.textBoxVMsPath.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.textBoxVMsPath.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.FileSystemDirectories;
+            this.textBoxVMsPath.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
+            this.textBoxVMsPath.ForeColor = System.Drawing.Color.Turquoise;
+            this.textBoxVMsPath.Location = new System.Drawing.Point(25, 28);
+            this.textBoxVMsPath.Name = "textBoxVMsPath";
+            this.textBoxVMsPath.Size = new System.Drawing.Size(407, 23);
+            this.textBoxVMsPath.TabIndex = 1;
+            // 
+            // labelVMsPath
+            // 
+            this.labelVMsPath.AutoSize = true;
+            this.labelVMsPath.Location = new System.Drawing.Point(25, 10);
+            this.labelVMsPath.Name = "labelVMsPath";
+            this.labelVMsPath.Size = new System.Drawing.Size(60, 15);
+            this.labelVMsPath.TabIndex = 0;
+            this.labelVMsPath.Text = "VMs Path:";
             // 
             // buttonSave
             // 
@@ -81,7 +116,7 @@ namespace coolui
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.textBoxDocsPath);
             this.panel3.Controls.Add(this.labelDocsPath);
-            this.panel3.Location = new System.Drawing.Point(12, 152);
+            this.panel3.Location = new System.Drawing.Point(12, 225);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(460, 67);
             this.panel3.TabIndex = 1;
@@ -175,6 +210,8 @@ namespace coolui
             this.Name = "SettingsItem";
             this.Size = new System.Drawing.Size(500, 402);
             this.panelSettings.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -197,5 +234,8 @@ namespace coolui
         private System.Windows.Forms.TextBox textBoxAppsPath;
         private System.Windows.Forms.Label labelAppPath;
         private System.Windows.Forms.Button buttonSave;
+        private Panel panel4;
+        private TextBox textBoxVMsPath;
+        private Label labelVMsPath;
     }
 }

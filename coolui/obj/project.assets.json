@@ -7368,7 +7368,7 @@
     "version": "1.0.0",
     "restore": {
       "projectUniqueName": "C:\\Users\\msteven\\source\\repos\\coolui\\coolui\\coolui.csproj",
-      "projectName": "coolui",
+      "projectName": "centralui",
       "projectPath": "C:\\Users\\msteven\\source\\repos\\coolui\\coolui\\coolui.csproj",
       "packagesPath": "C:\\Users\\msteven\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\msteven\\source\\repos\\coolui\\coolui\\obj\\",

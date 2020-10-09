@@ -58,5 +58,17 @@ namespace coolui.Properties {
                 this["DocsPath"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string VMsPath {
+            get {
+                return ((string)(this["VMsPath"]));
+            }
+            set {
+                this["VMsPath"] = value;
+            }
+        }
     }
 }

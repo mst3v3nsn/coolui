@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListItem));
             this.panelButton = new System.Windows.Forms.Panel();
             this.appButton = new System.Windows.Forms.Button();
             this.panelButton.SuspendLayout();
@@ -48,7 +47,6 @@
             this.appButton.FlatAppearance.BorderSize = 0;
             this.appButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.appButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.appButton.Image = ((System.Drawing.Image)(resources.GetObject("appButton.Image")));
             this.appButton.Location = new System.Drawing.Point(0, 0);
             this.appButton.Name = "appButton";
             this.appButton.Size = new System.Drawing.Size(96, 84);

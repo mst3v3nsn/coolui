@@ -11,11 +11,13 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("coolui")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("Leidos")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
+[assembly: System.Reflection.AssemblyCopyrightAttribute("2020")]
+[assembly: System.Reflection.AssemblyDescriptionAttribute("User interface built to centralize applications, tools, and documents.")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
-[assembly: System.Reflection.AssemblyProductAttribute("coolui")]
+[assembly: System.Reflection.AssemblyProductAttribute("centralui")]
 [assembly: System.Reflection.AssemblyTitleAttribute("coolui")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 

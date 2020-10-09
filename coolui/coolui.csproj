@@ -4,6 +4,18 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
+    <ApplicationIcon>icons8_iron_man.ico</ApplicationIcon>
+    <Description>User interface built to centralize applications, tools, and documents.</Description>
+    <PackageId>centralui</PackageId>
+    <Authors>Matthew Stevenson</Authors>
+    <Company>Leidos</Company>
+    <Product>centralui</Product>
+    <Copyright>2020</Copyright>
+    <PackageIcon>icons8_iron_man_32.png</PackageIcon>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>C:\Users\msteven\source\repos\coolui\coolui\coolui.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -54,6 +66,10 @@
     <None Update="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="..\..\..\..\Icons\icons8_iron_man_32.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
     </None>
   </ItemGroup>
 

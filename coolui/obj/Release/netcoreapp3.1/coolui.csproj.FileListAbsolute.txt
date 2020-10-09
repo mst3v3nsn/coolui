@@ -169,6 +169,7 @@ C:\Users\msteven\source\repos\coolui\coolui\bin\Release\netcoreapp3.1\coolui.run
 C:\Users\msteven\source\repos\coolui\coolui\bin\Release\netcoreapp3.1\coolui.runtimeconfig.dev.json
 C:\Users\msteven\source\repos\coolui\coolui\bin\Release\netcoreapp3.1\coolui.dll
 C:\Users\msteven\source\repos\coolui\coolui\bin\Release\netcoreapp3.1\coolui.pdb
+C:\Users\msteven\source\repos\coolui\coolui\bin\Release\netcoreapp3.1\coolui.xml
 C:\Users\msteven\source\repos\coolui\coolui\bin\Release\netcoreapp3.1\Markdig.Signed.dll
 C:\Users\msteven\source\repos\coolui\coolui\bin\Release\netcoreapp3.1\Microsoft.ApplicationInsights.dll
 C:\Users\msteven\source\repos\coolui\coolui\bin\Release\netcoreapp3.1\Microsoft.CodeAnalysis.dll

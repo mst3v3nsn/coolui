@@ -20,7 +20,7 @@ namespace coolui
         private string _appsPath;
         private string _toolsPath;
         private string _docsPath;
-
+        private string _vmsPath;
 
         [Category("Custom Props")]
         public string AppsPath
@@ -43,6 +43,13 @@ namespace coolui
             set { _docsPath = value; textBoxDocsPath.Text = value; }
         }
 
+        [Category("Custom Props")]
+        public string VMsPath
+        {
+            get { return _vmsPath; }
+            set { _vmsPath = value; textBoxVMsPath.Text = value; }
+        }
+
         #endregion
 
         private void buttonSave_Click(object sender, EventArgs e)
@@ -50,6 +57,7 @@ namespace coolui
             Properties.Settings.Default["AppsPath"] = textBoxAppsPath.Text;
             Properties.Settings.Default["ToolsPath"] = textBoxToolsPath.Text;
             Properties.Settings.Default["DocsPath"] = textBoxDocsPath.Text;
+            Properties.Settings.Default["VMsPath"] = textBoxVMsPath.Text;
             Properties.Settings.Default.Save();
         }
     }
