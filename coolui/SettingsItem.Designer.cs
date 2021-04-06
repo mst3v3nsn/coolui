@@ -33,6 +33,8 @@ namespace coolui
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SettingsItem));
             this.panelSettings = new System.Windows.Forms.Panel();
+            this.labelConfigTarget = new System.Windows.Forms.Label();
+            this.comboBoxTargetConfig = new System.Windows.Forms.ComboBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.textBoxVMsPath = new System.Windows.Forms.TextBox();
             this.labelVMsPath = new System.Windows.Forms.Label();
@@ -56,6 +58,8 @@ namespace coolui
             // panelSettings
             // 
             this.panelSettings.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelSettings.Controls.Add(this.labelConfigTarget);
+            this.panelSettings.Controls.Add(this.comboBoxTargetConfig);
             this.panelSettings.Controls.Add(this.panel4);
             this.panelSettings.Controls.Add(this.buttonSave);
             this.panelSettings.Controls.Add(this.panel3);
@@ -66,6 +70,23 @@ namespace coolui
             this.panelSettings.Name = "panelSettings";
             this.panelSettings.Size = new System.Drawing.Size(500, 402);
             this.panelSettings.TabIndex = 1;
+            // 
+            // labelConfigTarget
+            // 
+            this.labelConfigTarget.AutoSize = true;
+            this.labelConfigTarget.Location = new System.Drawing.Point(38, 332);
+            this.labelConfigTarget.Name = "labelConfigTarget";
+            this.labelConfigTarget.Size = new System.Drawing.Size(188, 15);
+            this.labelConfigTarget.TabIndex = 0;
+            this.labelConfigTarget.Text = "Config Target (PowerShell Scripts):";
+            // 
+            // comboBoxTargetConfig
+            // 
+            this.comboBoxTargetConfig.FormattingEnabled = true;
+            this.comboBoxTargetConfig.Location = new System.Drawing.Point(38, 350);
+            this.comboBoxTargetConfig.Name = "comboBoxTargetConfig";
+            this.comboBoxTargetConfig.Size = new System.Drawing.Size(86, 23);
+            this.comboBoxTargetConfig.TabIndex = 3;
             // 
             // panel4
             // 
@@ -210,6 +231,7 @@ namespace coolui
             this.Name = "SettingsItem";
             this.Size = new System.Drawing.Size(500, 402);
             this.panelSettings.ResumeLayout(false);
+            this.panelSettings.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -237,5 +259,7 @@ namespace coolui
         private Panel panel4;
         private TextBox textBoxVMsPath;
         private Label labelVMsPath;
+        private Label labelConfigTarget;
+        private ComboBox comboBoxTargetConfig;
     }
 }

@@ -48,6 +48,9 @@ namespace coolui
         // string that represents the extension of a particular file
         private string _extension;
 
+        private int _importance;
+        private string _info;
+
         [Category("Custom Props")]
         public string AppName
         {
@@ -108,18 +111,74 @@ namespace coolui
             // set arguments
             set { _arguments = value; }
         }
+
+        [Category("Custom Props")]
+        public int Importance
+        {
+            // get arguments
+            get { return _importance; }
+            // set arguments
+            set { _importance = value; }
+        }
+
+        [Category("Custom Props")]
+        public string Info
+        {
+            // get arguments
+            get { return _info; }
+            // set arguments
+            set { _info = value; }
+        }
+
+
         #endregion
 
         private void appButton_Click(object sender, EventArgs e)
+        {
+            var parent = this.ParentForm as MPCMSForm;
+
+            AcceptModal modal = new AcceptModal();
+            modal.Parent = parent.Parent;
+            modal.StartPosition = FormStartPosition.CenterParent;
+
+            if (parent.getAppButtonSelected() == true && Importance == 5)
+            {
+                modal.ShowDialog();
+
+                if (modal.DialogResult == DialogResult.Yes)
+                {
+                    Execute();
+                }
+                else
+                {
+                    // Do Nothing
+                }
+            }
+            else
+            {
+                Execute();
+            }
+        }
+
+        private void Execute()
         {
             // check extension
             if (Extension == ".ps1")
             {
                 // format path for .ps1 scriptfile
                 string scriptFile = String.Format(@"{0}\{1}", AppPath, AppName);
-                
+
+                string targetConfig = Properties.Settings.Default.TargetConfig;
+
                 // start process with create ProcessStartInfo object that was created and returned
-                Process.Start(CreateStartProcessObject(powershellexe, $"-NoProfile -ExecutionPolicy unrestricted \"{scriptFile}\""));
+                //Process.Start(CreateStartProcessObject(powershellexe, $"-NoProfile -ExecutionPolicy unrestricted \"{scriptFile}\""));
+                ProcessStartInfo processInfo = new ProcessStartInfo();
+                processInfo.FileName = powershellexe;
+                processInfo.Arguments = $"-NoProfile -ExecutionPolicy unrestricted \"{scriptFile}\" -targetConfig {targetConfig}";
+                
+                Process process = new Process();
+                process.StartInfo = processInfo;
+                process.Start();
             }
             else if (Extension == ".exe")
             {
@@ -133,10 +192,28 @@ namespace coolui
                 // create new shortcut object using specified path to executable of .lnk file extension
                 IWshShortcut shortcut = (IWshShortcut)wsh.CreateShortcut(String.Format(@"{0}\{1}", AppPath, AppName));
 
-                // start process with create ProcessStartInfo object that was created and returned
-                Process.Start(CreateStartProcessObject(shortcut.TargetPath, shortcut.Arguments));
+                if (shortcut.WorkingDirectory.Contains("System32"))
+                {
+                    var process = new Process
+                    {
+                        StartInfo = new ProcessStartInfo
+                        {
+                            FileName = shortcut.TargetPath,
+                            Arguments = "behavior query SymlinkEvaluation " + shortcut.Arguments,
+                            UseShellExecute = false, RedirectStandardOutput = false,
+                            CreateNoWindow = true
+                        }
+                    };
+
+                    process.Start();
+                }
+                else
+                {
+                    // start process with create ProcessStartInfo object that was created and returned
+                    Process.Start(CreateStartProcessObject(shortcut.TargetPath, shortcut.Arguments));
+                }
             }
-            else if (Extension == ".pdf" || Extension == ".docx" || Extension == ".doc" || Extension == ".xlsx")
+            else if (Extension == ".pdf" || Extension == ".docx" || Extension == ".doc" || Extension == ".xlsx" || Extension == ".vsd")
             {
                 // start process with details found upon registry lookup
                 RunCommandString();
@@ -210,6 +287,7 @@ namespace coolui
         {
             // create new ToolTip object
             ToolTip toolTip = new ToolTip();
+
             // check if file extension represents a shortcut
             if (Extension == ".lnk")
             {
@@ -217,13 +295,17 @@ namespace coolui
                 IWshShell3 wsh = new WshShellClass();
                 // create new shortcut object using specified path to executable of .lnk file extension
                 IWshShortcut shortcut = (IWshShortcut)wsh.CreateShortcut(String.Format(@"{0}\{1}", AppPath, AppName));
-                
+
                 // set ToolTip object details using shortcut attributes
-                toolTip.SetToolTip(this.appButton, 
-                    String.Format(@"{0} {1}" + 
+                toolTip.SetToolTip(this.appButton,
+                    String.Format(@"{0} {1}" +
                     Environment.NewLine +
                     Environment.NewLine +
                     "{2}", shortcut.TargetPath, shortcut.Arguments, shortcut.Description));
+            }
+            else if (Extension == ".ps1")
+            {
+                toolTip.SetToolTip(this.appButton, Info);
             }
             else
             {

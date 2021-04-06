@@ -31,7 +31,7 @@ namespace coolui
         // entension predicate list for VMs
         public static List<string> vmExts = new List<string> { ".lnk" };
         // entension predicate list for Docs
-        public static List<string> docExts = new List<string> { ".pdf", ".docx", ".doc", ".lnk", ".txt" , ".xlsx"};
+        public static List<string> docExts = new List<string> { ".pdf", ".docx", ".doc", ".lnk", ".txt" , ".xlsx", ".vsd"};
         // default apps folder
         public static string appsFolder = @"C:\MPCMS\Applications";
         // default tools folder
@@ -46,6 +46,12 @@ namespace coolui
         public bool listSorted { get; set; }
         // hide panel control variable
         public bool hidePanel { get; set; }
+        public static bool appButtonSelected { get; set; }
+        public bool appSelected { get; set; }
+        public bool toolsSelected { get; set; }
+        public bool vmSelected { get; set; }
+        public bool docSelected { get; set; }
+        public bool helpClicked { get; set; }
 
         public MPCMSForm()
         {
@@ -57,6 +63,12 @@ namespace coolui
             panelHighlight.Location = new Point(panelHighlight.Location.X, buttonApps.Location.Y);
             panelSearch.Visible = false;
             buttonHideControl.Visible = false;
+
+            appSelected = false;
+            toolsSelected = false;
+            vmSelected = false;
+            docSelected = false;
+            helpClicked = false;
         }
 
         private void PopulateSettings()
@@ -117,6 +129,19 @@ namespace coolui
             {
                 // set DocsPath with saved settings
                 settingItem[0].DocsPath = (string)Settings.Default.DocsPath;
+            }
+
+            // check if saved settings exist for TargetConfig
+            if ((string)Settings.Default.TargetConfig == "")
+            {
+                // set DocsPath and set saved setting for DocsPath with default
+                Settings.Default.TargetConfig = "lab";
+
+            }
+            else
+            {
+                // set DocsPath with saved settings
+                settingItem[0].TargetConfig = (string)Settings.Default.TargetConfig;
             }
 
             // add settings object to flow layout panel
@@ -296,11 +321,25 @@ namespace coolui
                 {
                     // set icon after conversion
                     listItems[i].Icon = ConvertPathToBitMap(powershellexe);
+                    listItems[i].Importance = 5;
+
+                    if(System.IO.File.Exists(filesFound[i].DirectoryName + "\\info.json"))
+                    {
+                        AppInfo app = new AppInfo(filesFound[i].DirectoryName);
+
+                        listItems[i].Info = app.Info;
+                    }
+                    else
+                    {
+                        listItems[i].Info = "No information file available!";
+                    }
                 }
                 else if (filesFound[i].Extension == ".exe")
                 {
                     //set icon after conversion
                     listItems[i].Icon = ConvertPathToBitMap(String.Format(@"{0}\{1}", filesFound[i].DirectoryName, filesFound[i].Name));
+                    listItems[i].Importance = 4;
+                    listItems[i].Info = "";
                 }
                 else if (filesFound[i].Extension == ".lnk")
                 {
@@ -310,12 +349,16 @@ namespace coolui
                     {
                         // set icon after conversion
                         listItems[i].Icon = ConvertPathToBitMap(String.Format(@"{0}\{1}", filesFound[i].DirectoryName, filesFound[i].Name));
+                        listItems[i].Importance = 3;
+                        listItems[i].Info = "";
                     }
                 }
                 else
                 {
                     // set icon after conversion
                     listItems[i].Icon = GetIconBitMap(filesFound[i].Extension);
+                    listItems[i].Importance = 3;
+                    listItems[i].Info = "";
                 }
 
                 // set extension
@@ -354,6 +397,12 @@ namespace coolui
             buttonHideControl.Visible = true;
             // clear text
             textBoxSearch.Text = "";
+            appButtonSelected = true;
+
+            appSelected = true;
+            toolsSelected = false;
+            vmSelected = false;
+            docSelected = false;
 
             // clear flow panel
             flowLayoutPanel.Controls.Clear();
@@ -374,6 +423,11 @@ namespace coolui
             // clear text
             textBoxSearch.Text = "";
 
+            appSelected = false;
+            toolsSelected = true;
+            vmSelected = false;
+            docSelected = false;
+
             // clear flow panel
             flowLayoutPanel.Controls.Clear();
             // get list of files with Extensions within specified directory
@@ -392,6 +446,11 @@ namespace coolui
             buttonHideControl.Visible = true;
             // clear text
             textBoxSearch.Text = "";
+
+            appSelected = false;
+            toolsSelected = false;
+            vmSelected = true;
+            docSelected = false;
 
             // clear flow panel
             flowLayoutPanel.Controls.Clear();
@@ -412,6 +471,11 @@ namespace coolui
             // clear text
             textBoxSearch.Text = "";
 
+            appSelected = false;
+            toolsSelected = false;
+            vmSelected = false;
+            docSelected = true;
+
             // clear flow panel
             flowLayoutPanel.Controls.Clear();
             // get list of files with Extensions within specified directory
@@ -428,6 +492,11 @@ namespace coolui
             panelHighlight.Location = new Point(panelHighlight.Location.X, buttonSettings.Location.Y);
             panelSearch.Visible = false;
             buttonHideControl.Visible = false;
+
+            appSelected = false;
+            toolsSelected = false;
+            vmSelected = false;
+            docSelected = false;
 
             // clear flow panel
             flowLayoutPanel.Controls.Clear();
@@ -518,5 +587,122 @@ namespace coolui
                 SortList();
             }
         }
+
+        public bool getAppButtonSelected()
+        {
+            if (getButtonSelection() == "app")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public string getButtonSelection()
+        {
+            if (appSelected == true)
+            {
+                return "app";
+            }
+            else if (toolsSelected == true)
+            {
+                return "tool";
+            }
+            else if (vmSelected == true)
+            {
+                return "vm";
+            }
+            else if (docSelected == true)
+            {
+                return "doc";
+            }
+            else
+            {
+                return "none";
+            }
+        }
+
+        private string SettingsPathLookup(string type)
+        {
+            if (type == "app")
+            {
+                return Settings.Default.AppsPath;
+            }
+            else if (type == "tool")
+            {
+                return Settings.Default.ToolsPath;
+            }
+            else if (type == "vm")
+            {
+                return Settings.Default.VMsPath;
+            }
+            else if (type == "doc")
+            {
+                return Settings.Default.DocsPath;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        private void refreshList()
+        {
+            string type = getButtonSelection();
+            if (type == "app")
+            {
+                this.buttonApps.PerformClick();
+            }
+            else if (type == "tool")
+            {
+                this.buttonTools.PerformClick();
+            }
+            else if (type == "vm")
+            {
+                this.buttonVMs.PerformClick();
+            }
+            else if (type == "doc")
+            {
+                this.buttonDocs.PerformClick();
+            }
+        }
+
+        private void flowLayoutPanel_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+                e.Effect = DragDropEffects.All;
+            else
+                e.Effect = DragDropEffects.None;
+        }
+
+        private void flowLayoutPanel_DragDrop(object sender, System.Windows.Forms.DragEventArgs e)
+        {
+            if (getButtonSelection() != "none")
+            {
+                string dropPath = SettingsPathLookup(getButtonSelection());
+
+                string[] s = (string[])e.Data.GetData(DataFormats.FileDrop, false);
+                string file = Path.GetFileName(s[0]);
+
+                Directory.Move(s[0], dropPath + "\\" + file);
+                refreshList();
+            }
+        }
+
+        private void buttonMinimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void buttonPlus_Click(object sender, EventArgs e)
+        {
+            HelpPanel modal = new HelpPanel();
+            modal.Parent = this.Parent;
+            modal.StartPosition = FormStartPosition.CenterParent;
+            modal.ShowDialog();
+        }
+
     }
 }

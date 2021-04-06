@@ -13,6 +13,8 @@ namespace coolui
         public SettingsItem()
         {
             InitializeComponent();
+            comboBoxTargetConfig.Items.Add("ship");
+            comboBoxTargetConfig.Items.Add("lab");
         }
 
         #region Properties
@@ -21,6 +23,7 @@ namespace coolui
         private string _toolsPath;
         private string _docsPath;
         private string _vmsPath;
+        private string _config;
 
         [Category("Custom Props")]
         public string AppsPath
@@ -50,14 +53,22 @@ namespace coolui
             set { _vmsPath = value; textBoxVMsPath.Text = value; }
         }
 
+        [Category("Custom Props")]
+        public string TargetConfig
+        {
+            get { return _config; }
+            set { _config = value; comboBoxTargetConfig.Text = value; }
+        }
+
         #endregion
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
-            Properties.Settings.Default["AppsPath"] = textBoxAppsPath.Text;
-            Properties.Settings.Default["ToolsPath"] = textBoxToolsPath.Text;
-            Properties.Settings.Default["DocsPath"] = textBoxDocsPath.Text;
-            Properties.Settings.Default["VMsPath"] = textBoxVMsPath.Text;
+            Properties.Settings.Default.AppsPath = textBoxAppsPath.Text;
+            Properties.Settings.Default.ToolsPath = textBoxToolsPath.Text;
+            Properties.Settings.Default.DocsPath = textBoxDocsPath.Text;
+            Properties.Settings.Default.VMsPath = textBoxVMsPath.Text;
+            Properties.Settings.Default.TargetConfig = comboBoxTargetConfig.SelectedItem.ToString();
             Properties.Settings.Default.Save();
         }
     }

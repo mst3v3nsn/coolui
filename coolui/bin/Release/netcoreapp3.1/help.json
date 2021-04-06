@@ -1,0 +1,14 @@
+[
+  "PowerShell Automation Scripts can be found in the 'Apps' section by clicking on the button within the Left Menu denoted by the word 'Apps'. Hovering over the items listed in the section that appears will show details of the operations the automation script performs.",
+  "Any other type of file within the User Interface will show the path where the item is location on the Computer.",
+  "Selecting the 'Tools' button within the Left Menu will present items that are useful for troubleshooting operations and/or data investigations.",
+  "Selecting the 'VM' button will display available Virtual Machines accesible through VMware vCenter. (requires login into VMware vCenter)",
+  "Selecting the 'Docs' button will display all available documents available for the MPCMS system.",
+  "Each menu will allow items to be dragged and dropped into the selected location. Once the item is dropped, the list will repopulate. PLEASE NOTE: Dropping an item within the wrong category will not populate into the User Interface.",
+  "Please ensure the proper location is targeted within the Settings Tab in the dropdown labeled Target Config. This controls what configurations to use for automation scripts. (ship/lab)",
+  "",
+  "test"
+]
+
+
+

@@ -163,6 +163,7 @@ C:\Users\msteven\source\repos\coolui\coolui\bin\Release\netcoreapp3.1\runtimes\w
 C:\Users\msteven\source\repos\coolui\coolui\bin\Release\netcoreapp3.1\runtimes\win\lib\netcoreapp3.1\Modules\Microsoft.WSMan.Management\WSMan.format.ps1xml
 C:\Users\msteven\source\repos\coolui\coolui\bin\Release\netcoreapp3.1\runtimes\win\lib\netcoreapp3.1\Modules\PSDiagnostics\PSDiagnostics.psd1
 C:\Users\msteven\source\repos\coolui\coolui\bin\Release\netcoreapp3.1\runtimes\win\lib\netcoreapp3.1\Modules\PSDiagnostics\PSDiagnostics.psm1
+C:\Users\msteven\source\repos\coolui\coolui\bin\Release\netcoreapp3.1\help.json
 C:\Users\msteven\source\repos\coolui\coolui\bin\Release\netcoreapp3.1\coolui.exe
 C:\Users\msteven\source\repos\coolui\coolui\bin\Release\netcoreapp3.1\coolui.deps.json
 C:\Users\msteven\source\repos\coolui\coolui\bin\Release\netcoreapp3.1\coolui.runtimeconfig.json
@@ -341,6 +342,9 @@ C:\Users\msteven\source\repos\coolui\coolui\bin\Release\netcoreapp3.1\Interop.IW
 C:\Users\msteven\source\repos\coolui\coolui\obj\Release\netcoreapp3.1\Interop.WSHControllerLibrary.dll
 C:\Users\msteven\source\repos\coolui\coolui\obj\Release\netcoreapp3.1\Interop.IWshRuntimeLibrary.dll
 C:\Users\msteven\source\repos\coolui\coolui\obj\Release\netcoreapp3.1\coolui.csproj.ResolveComReference.cache
+C:\Users\msteven\source\repos\coolui\coolui\obj\Release\netcoreapp3.1\coolui.AcceptModal.resources
+C:\Users\msteven\source\repos\coolui\coolui\obj\Release\netcoreapp3.1\coolui.HelpItem.resources
+C:\Users\msteven\source\repos\coolui\coolui\obj\Release\netcoreapp3.1\coolui.HelpPanel.resources
 C:\Users\msteven\source\repos\coolui\coolui\obj\Release\netcoreapp3.1\coolui.ListItem.resources
 C:\Users\msteven\source\repos\coolui\coolui\obj\Release\netcoreapp3.1\coolui.Properties.Resources.resources
 C:\Users\msteven\source\repos\coolui\coolui\obj\Release\netcoreapp3.1\coolui.SettingsItem.resources
