@@ -13,7 +13,6 @@ namespace coolui
         public SettingsItem()
         {
             InitializeComponent();
-            comboBoxTargetConfig.Items.Add("ship");
             comboBoxTargetConfig.Items.Add("lab");
         }
 

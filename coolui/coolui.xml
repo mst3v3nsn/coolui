@@ -130,18 +130,18 @@
             the contents of this method with the code editor.
             </summary>
         </member>
-        <member name="F:coolui.MPCMSForm.components">
+        <member name="F:coolui.NewForm.components">
             <summary>
              Required designer variable.
             </summary>
         </member>
-        <member name="M:coolui.MPCMSForm.Dispose(System.Boolean)">
+        <member name="M:coolui.NewForm.Dispose(System.Boolean)">
             <summary>
              Clean up any resources being used.
             </summary>
             <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         </member>
-        <member name="M:coolui.MPCMSForm.InitializeComponent">
+        <member name="M:coolui.NewForm.InitializeComponent">
             <summary>
              Required method for Designer support - do not modify
              the contents of this method with the code editor.

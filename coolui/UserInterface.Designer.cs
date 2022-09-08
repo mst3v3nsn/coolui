@@ -1,6 +1,6 @@
 ﻿namespace coolui
 {
-    partial class MPCMSForm
+    partial class NewForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MPCMSForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewForm));
             this.panelMenu = new System.Windows.Forms.Panel();
             this.buttonVMs = new System.Windows.Forms.Button();
             this.buttonDocs = new System.Windows.Forms.Button();
@@ -36,8 +36,8 @@
             this.buttonSettings = new System.Windows.Forms.Button();
             this.buttonTools = new System.Windows.Forms.Button();
             this.buttonApps = new System.Windows.Forms.Button();
-            this.MPCMS = new System.Windows.Forms.Panel();
-            this.buttonMPCMS = new System.Windows.Forms.Button();
+            this.New = new System.Windows.Forms.Panel();
+            this.buttonNew = new System.Windows.Forms.Button();
             this.panelHighlight = new System.Windows.Forms.Panel();
             this.flowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -49,7 +49,7 @@
             this.buttonHideControl = new System.Windows.Forms.Button();
             this.buttonPlus = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
-            this.MPCMS.SuspendLayout();
+            this.New.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelSearch.SuspendLayout();
             this.SuspendLayout();
@@ -63,14 +63,14 @@
             this.panelMenu.Controls.Add(this.buttonSettings);
             this.panelMenu.Controls.Add(this.buttonTools);
             this.panelMenu.Controls.Add(this.buttonApps);
-            this.panelMenu.Controls.Add(this.MPCMS);
+            this.panelMenu.Controls.Add(this.New);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(152, 611);
             this.panelMenu.TabIndex = 0;
-            this.panelMenu.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MPCMSForm_MouseDown);
-            this.panelMenu.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MPCMSForm_MouseMove);
+            this.panelMenu.MouseDown += new System.Windows.Forms.MouseEventHandler(this.NewForm_MouseDown);
+            this.panelMenu.MouseMove += new System.Windows.Forms.MouseEventHandler(this.NewForm_MouseMove);
             // 
             // buttonVMs
             // 
@@ -87,8 +87,8 @@
             this.buttonVMs.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.buttonVMs.UseVisualStyleBackColor = true;
             this.buttonVMs.Click += new System.EventHandler(this.buttonVMs_Click);
-            this.buttonVMs.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MPCMSForm_MouseDown);
-            this.buttonVMs.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MPCMSForm_MouseMove);
+            this.buttonVMs.MouseDown += new System.Windows.Forms.MouseEventHandler(this.NewForm_MouseDown);
+            this.buttonVMs.MouseMove += new System.Windows.Forms.MouseEventHandler(this.NewForm_MouseMove);
             // 
             // buttonDocs
             // 
@@ -106,8 +106,8 @@
             this.buttonDocs.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.buttonDocs.UseVisualStyleBackColor = true;
             this.buttonDocs.Click += new System.EventHandler(this.buttonDocs_Click);
-            this.buttonDocs.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MPCMSForm_MouseDown);
-            this.buttonDocs.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MPCMSForm_MouseMove);
+            this.buttonDocs.MouseDown += new System.Windows.Forms.MouseEventHandler(this.NewForm_MouseDown);
+            this.buttonDocs.MouseMove += new System.Windows.Forms.MouseEventHandler(this.NewForm_MouseMove);
             // 
             // buttonExit
             // 
@@ -144,8 +144,8 @@
             this.buttonSettings.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.buttonSettings.UseVisualStyleBackColor = true;
             this.buttonSettings.Click += new System.EventHandler(this.buttonSettings_Click);
-            this.buttonSettings.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MPCMSForm_MouseDown);
-            this.buttonSettings.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MPCMSForm_MouseMove);
+            this.buttonSettings.MouseDown += new System.Windows.Forms.MouseEventHandler(this.NewForm_MouseDown);
+            this.buttonSettings.MouseMove += new System.Windows.Forms.MouseEventHandler(this.NewForm_MouseMove);
             // 
             // buttonTools
             // 
@@ -163,8 +163,8 @@
             this.buttonTools.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.buttonTools.UseVisualStyleBackColor = true;
             this.buttonTools.Click += new System.EventHandler(this.buttonTools_Click);
-            this.buttonTools.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MPCMSForm_MouseDown);
-            this.buttonTools.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MPCMSForm_MouseMove);
+            this.buttonTools.MouseDown += new System.Windows.Forms.MouseEventHandler(this.NewForm_MouseDown);
+            this.buttonTools.MouseMove += new System.Windows.Forms.MouseEventHandler(this.NewForm_MouseMove);
             // 
             // buttonApps
             // 
@@ -182,39 +182,39 @@
             this.buttonApps.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.buttonApps.UseVisualStyleBackColor = true;
             this.buttonApps.Click += new System.EventHandler(this.buttonApps_Click);
-            this.buttonApps.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MPCMSForm_MouseDown);
-            this.buttonApps.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MPCMSForm_MouseMove);
+            this.buttonApps.MouseDown += new System.Windows.Forms.MouseEventHandler(this.NewForm_MouseDown);
+            this.buttonApps.MouseMove += new System.Windows.Forms.MouseEventHandler(this.NewForm_MouseMove);
             // 
-            // MPCMS
+            // New
             // 
-            this.MPCMS.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.MPCMS.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.MPCMS.Controls.Add(this.buttonMPCMS);
-            this.MPCMS.Dock = System.Windows.Forms.DockStyle.Top;
-            this.MPCMS.Location = new System.Drawing.Point(0, 0);
-            this.MPCMS.Name = "MPCMS";
-            this.MPCMS.Size = new System.Drawing.Size(150, 96);
-            this.MPCMS.TabIndex = 0;
+            this.New.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.New.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.New.Controls.Add(this.buttonNew);
+            this.New.Dock = System.Windows.Forms.DockStyle.Top;
+            this.New.Location = new System.Drawing.Point(0, 0);
+            this.New.Name = "New";
+            this.New.Size = new System.Drawing.Size(150, 96);
+            this.New.TabIndex = 0;
             // 
-            // buttonMPCMS
+            // buttonNew
             // 
-            this.buttonMPCMS.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.buttonMPCMS.FlatAppearance.BorderSize = 0;
-            this.buttonMPCMS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonMPCMS.Font = new System.Drawing.Font("Gill Sans Ultra Bold", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.buttonMPCMS.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
-            this.buttonMPCMS.Image = ((System.Drawing.Image)(resources.GetObject("buttonMPCMS.Image")));
-            this.buttonMPCMS.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.buttonMPCMS.Location = new System.Drawing.Point(0, 0);
-            this.buttonMPCMS.Name = "buttonMPCMS";
-            this.buttonMPCMS.Size = new System.Drawing.Size(152, 96);
-            this.buttonMPCMS.TabIndex = 3;
-            this.buttonMPCMS.Text = "Central UI";
-            this.buttonMPCMS.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.buttonMPCMS.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.buttonMPCMS.UseVisualStyleBackColor = false;
-            this.buttonMPCMS.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MPCMSForm_MouseDown);
-            this.buttonMPCMS.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MPCMSForm_MouseMove);
+            this.buttonNew.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.buttonNew.FlatAppearance.BorderSize = 0;
+            this.buttonNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonNew.Font = new System.Drawing.Font("Gill Sans Ultra Bold", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.buttonNew.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
+            this.buttonNew.Image = ((System.Drawing.Image)(resources.GetObject("buttonNew.Image")));
+            this.buttonNew.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.buttonNew.Location = new System.Drawing.Point(0, 0);
+            this.buttonNew.Name = "buttonNew";
+            this.buttonNew.Size = new System.Drawing.Size(152, 96);
+            this.buttonNew.TabIndex = 3;
+            this.buttonNew.Text = "Central UI";
+            this.buttonNew.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.buttonNew.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.buttonNew.UseVisualStyleBackColor = false;
+            this.buttonNew.MouseDown += new System.Windows.Forms.MouseEventHandler(this.NewForm_MouseDown);
+            this.buttonNew.MouseMove += new System.Windows.Forms.MouseEventHandler(this.NewForm_MouseMove);
             // 
             // panelHighlight
             // 
@@ -237,8 +237,8 @@
             this.flowLayoutPanel.TabIndex = 4;
             this.flowLayoutPanel.DragDrop += new System.Windows.Forms.DragEventHandler(this.flowLayoutPanel_DragDrop);
             this.flowLayoutPanel.DragEnter += new System.Windows.Forms.DragEventHandler(this.flowLayoutPanel_DragEnter);
-            this.flowLayoutPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MPCMSForm_MouseDown);
-            this.flowLayoutPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MPCMSForm_MouseMove);
+            this.flowLayoutPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.NewForm_MouseDown);
+            this.flowLayoutPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.NewForm_MouseMove);
             // 
             // panel1
             // 
@@ -343,7 +343,7 @@
             this.buttonPlus.UseVisualStyleBackColor = true;
             this.buttonPlus.Click += new System.EventHandler(this.buttonPlus_Click);
             // 
-            // MPCMSForm
+            // NewForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
@@ -359,12 +359,12 @@
             this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "MPCMSForm";
+            this.Name = "NewForm";
             this.Text = "Central UI";
-            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MPCMSForm_MouseDown);
-            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MPCMSForm_MouseMove);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.NewForm_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.NewForm_MouseMove);
             this.panelMenu.ResumeLayout(false);
-            this.MPCMS.ResumeLayout(false);
+            this.New.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panelSearch.ResumeLayout(false);
@@ -376,11 +376,11 @@
         #endregion
 
         private System.Windows.Forms.Panel panelMenu;
-        private System.Windows.Forms.Panel MPCMS;
+        private System.Windows.Forms.Panel New;
         private System.Windows.Forms.Button buttonTools;
         private System.Windows.Forms.Button buttonApps;
         private System.Windows.Forms.Panel panelHighlight;
-        private System.Windows.Forms.Button buttonMPCMS;
+        private System.Windows.Forms.Button buttonNew;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel;
         private System.Windows.Forms.Button buttonExit;
         private System.Windows.Forms.Button buttonSettings;

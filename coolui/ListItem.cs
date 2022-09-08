@@ -135,7 +135,7 @@ namespace coolui
 
         private void appButton_Click(object sender, EventArgs e)
         {
-            var parent = this.ParentForm as MPCMSForm;
+            var parent = this.ParentForm as NewForm;
 
             AcceptModal modal = new AcceptModal();
             modal.Parent = parent.Parent;

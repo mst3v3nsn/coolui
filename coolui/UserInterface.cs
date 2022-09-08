@@ -16,7 +16,7 @@ using System.ComponentModel.Composition.Registration;
 
 namespace coolui
 {
-    public partial class MPCMSForm : Form
+    public partial class NewForm : Form
     {
         public BackgroundWorker backgroundWorker1;
 
@@ -33,13 +33,13 @@ namespace coolui
         // entension predicate list for Docs
         public static List<string> docExts = new List<string> { ".pdf", ".docx", ".doc", ".lnk", ".txt" , ".xlsx", ".vsd"};
         // default apps folder
-        public static string appsFolder = @"C:\MPCMS\Applications";
+        public static string appsFolder = @"C:\Test\Applications";
         // default tools folder
-        public static string toolsFolder = @"C:\MPCMS\Tools";
+        public static string toolsFolder = @"C:\Test\Tools";
         // default VMs folder
-        public static string vmsFolder = @"C:\MPCMS\VMs";
+        public static string vmsFolder = @"C:\Test\VMs";
         // default docs folder
-        public static string docsFolder = @"C:\MPCMS\Docs";
+        public static string docsFolder = @"C:\Test\Docs";
         // path to powershell 7 executable installed on system
         public static string powershellexe = @"C:\Program Files\PowerShell\7\pwsh.exe";
         // list sorted control variable
@@ -53,9 +53,8 @@ namespace coolui
         public bool docSelected { get; set; }
         public bool helpClicked { get; set; }
 
-        public MPCMSForm()
+        public NewForm()
         {
-            // initialize MPCMSForm
             InitializeComponent();
 
             panelHighlight.Height = buttonApps.Height;
@@ -504,7 +503,7 @@ namespace coolui
             PopulateSettings();
         }
 
-        private void MPCMSForm_MouseMove(object sender, MouseEventArgs e)
+        private void NewForm_MouseMove(object sender, MouseEventArgs e)
         {
             // Catch left mouse hold on object within UI
             if (e.Button == MouseButtons.Left)
@@ -516,7 +515,7 @@ namespace coolui
             }
         }
 
-        private void MPCMSForm_MouseDown(object sender, MouseEventArgs e)
+        private void NewForm_MouseDown(object sender, MouseEventArgs e)
         {
             // Update position of mouse drag
             lastPoint = new Point(e.X, e.Y);
